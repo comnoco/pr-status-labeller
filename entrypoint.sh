@@ -113,8 +113,6 @@ get_latest_commit_message() {
 }
 
 label_as_approved_or_awaiting_review() {
-  echo "Waiting 5 seconds for the GitHub API to update the reviews endpoint..."
-  sleep 5
   # https://developer.github.com/v3/pulls/reviews/#list-reviews-on-a-pull-request
   body=$(curl -sSL -H "${AUTH_HEADER}" -H "${API_HEADER}" "${API_URI}/repos/${GITHUB_REPOSITORY}/pulls/${pr_number}/reviews?per_page=100")
   # echo "${body}"

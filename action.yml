@@ -3,3 +3,7 @@ description: 'Auto-labels pull requests based on their status'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+branding:
+  icon: 'tag'
+  color: 'green'
+author: "Benjamin Nolan <benjamin.nolan@comnoco.io>"

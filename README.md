@@ -26,3 +26,29 @@ conflicts, making them much easier to spot in the PR list.
 This Action was adapted from
 [`abinoda/label-when-approved-action`](https://github.com/abinoda/label-when-approved-action), so
 shout out and thanks to [Abi Noda](https://github.com/abinoda) for creating the original action! :)
+
+## Example usage
+
+```yaml
+name: 'PR Status Labeller'
+
+on:
+  pull_request:
+  pull_request_review:
+
+jobs:
+  pr_status_labeller:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Labeller
+        uses: comnoco/pr-status-labeller@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AWAITING_REVIEW_LABEL: 'awaiting review' # default: 'awaiting review'
+          CHANGES_REQUESTED_LABEL: 'changes requested' # default: 'changes requested'
+          CLOSED_LABEL: 'closed' # default: 'closed'
+          CODE_APPROVED_LABEL: 'code approved' # default: 'code approved'
+          MERGED_LABEL: 'merged' # default: 'merged'
+          APPLY_CLOSED_LABEL: true # default: true
+          APPLY_MERGED_LABEL: true # default: true
+```
