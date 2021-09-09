@@ -1,0 +1,5 @@
+name: 'PR Status Labeller'
+description: 'Auto-labels pull requests based on their status'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
